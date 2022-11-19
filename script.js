@@ -4,6 +4,5 @@ function showPreview(event){
       var imgElement = document.getElementById("imgfile");
       imgElement.src = src;
       imgElement.style.display = "block";
-      // passImage(imgElement);
     }
   }
