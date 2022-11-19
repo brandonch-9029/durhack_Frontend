@@ -10,11 +10,20 @@
 <body>
     <div class="center">
         <div class="form-input">
-            <label for="file-ip-1">Upload Image</label>
-            <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+            <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+            <form class="input-group input-bar mb-3" action="https://durhackapi.azurewebsites.net/img_upload" method="POST" target="dummyframe">
+                <label for="file-ip-1">Upload Image</label>
+                <input type="file" id="imgfile" accept="image/*" onchange="showPreview(event);">
+                <input class="input-group-text btn-secondary" type="submit" value="submit">
+            </form>
             <div class="preview">
                 <img id="file-ip-1-preview">
-            </div> 
+            </div>
+            
+            <div class="result">
+                <!-- #TODO: print the returned result from Azure -->
+            </div>
+
         </div>
     </div>
  <!-- Link to the JavaScript file here: -->
