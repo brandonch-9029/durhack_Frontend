@@ -11,7 +11,7 @@
     <div class="center">
         <div class="form-input">
             <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
-            <form class="input-group input-bar mb-3" action="https://durhackapi.azurewebsites.net/img_upload" method="POST" target="dummyframe">
+            <form class="input-group input-bar mb-3" action="https://durhackapi.azurewebsites.net/img_upload" method="POST" target="dummyframe" enctype="multipart/form-data">
                 <label for="file-ip-1">Upload Image</label>
                 <input type="file" id="imgfile" accept="image/*" onchange="showPreview(event);">
                 <input class="input-group-text btn-secondary" type="submit" value="submit">
