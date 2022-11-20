@@ -11,6 +11,7 @@ function showPreview(event){
     var imgElement = document.getElementById("imgfilePreview");
     imgElement.src = src;
     imgElement.style.display = "block";
+    postUpload();
   }
 };
 
@@ -27,8 +28,8 @@ function clickedTransparentDiv(){
 // }
 
 function fetchFunc(){
-  // fetch("https://durhackapi.azurewebsites.net/img_upload")
-  fetch("test.json")
+  fetch("https://durhackapi.azurewebsites.net/get_data")
+  // fetch("test.json")
     .then(res => res.json())
     .then(d => {
       // console.log(d);
@@ -83,6 +84,25 @@ function createTransparentDiv(){
   }
 
 
+function postUpload(){
+    image = document.getElementById("imgfile");
+    let formData = new FormData();
+    formData.append("imgfile", image.files[0])
+    response = fetch('https://durhackapi.azurewebsites.net/img_upload', {method: "POST", body: formData});
+    
+    // const response = await fetch("https://durhackapi.azurewebsites.net/img_upload", {
+    // method: 'POST',
+    // headers: {
+    //   'Accept': 'application/json',
+    //   'Content-Type': 'application/json'
+    // },
+    // body: `{
+    // }`,});
+    
+    response.then(data => {
+      console.log(data);
+    });}
+
 // fetch("https://durhackapi.azurewebsites.net/img_upload")
 //   .then(res => res.json()
 //   .then(d => {
@@ -100,6 +120,5 @@ function createTransparentDiv(){
 // .catch(error => {
 //   console.log("Error:", error);
 // });
-
 
 
