@@ -17,11 +17,19 @@
                 <input type="file" id="imgfile" name="imgfile" accept="image/*" onchange="showPreview(event);">
                 <input class="input-group-text btn-secondary" type="submit" value="submit">
             </form>
-            <div class="preview">
+            <div class="preview" id="previewImage">
+                <div class="emptyTransparentDiv" id="emptyTransparentDiv" onclick="clickedTransparentDiv">
+                    
+                </div>
                 <img id="imgfilePreview">
+                
             </div>
-            
+            <div class="fetch">
+                <button onclick="fetchFunc()">Fetch</button>
+            </div>
+
             <div class="result">
+                <ul id="resultList"></ul>
                 <!-- #TODO: print the returned result from Azure -->
             </div>
 
